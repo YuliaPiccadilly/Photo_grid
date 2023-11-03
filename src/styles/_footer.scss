@@ -1,0 +1,196 @@
+
+
+.footer {
+  background-color: $dark;
+
+  &__container,
+  &__left,
+  &__right {
+    display: flex;
+  }
+
+  &__container,
+  &__right {
+    align-items: center;
+  }
+
+  &__container {
+    justify-content: space-between;
+
+    &-desc {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &-tablet {
+      padding-top: 15px;
+      padding-bottom: 12px;
+    }
+  }
+
+  &__left,
+  &__right {
+    flex-direction: column;
+  }
+
+  &__left {
+    margin-right: -124px;
+  }
+
+  &__logo {
+    margin-bottom: 6px;
+    width: 190px;
+    height: 31px;
+  }
+
+  &__company {
+    font-family: "TTFirsNeue", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: $white;
+  }
+
+  &__quote {
+    width: 361px;
+    padding-top: 2px;
+  }
+
+  &__text {
+    color: $lghtGrey;
+    line-height: 23px;
+  }
+
+  &__name {
+    color: #666666;
+    font-style: normal;
+  }
+
+  &__more {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 8px;
+    color: $white;
+    padding-top: 3px;
+  }
+
+  &__mobile {
+    display: none;
+    background-color: #4a4a4a;
+  }
+}
+
+.networks {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .icon {
+      fill: $lghtGrey;
+      transition: fill 0.2s ease-in-out;
+    }
+
+    a:hover {
+      .icon {
+        fill: $mainOrang;
+      }
+    }
+
+    a:focus {
+      .icon {
+        fill: #BC572B;
+      }
+    }
+
+    a:active {
+      .icon {
+        fill: #CE4307;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    &__logo {
+      width: 166px;
+      height: 27px;
+  }
+
+  &__left {
+    margin-right: 69px;
+  }
+}
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    &__logo {
+      width: 166px;
+      height: 27px;
+    }
+
+
+    &__container {
+      &-desc {
+        padding-bottom: 17px;
+      }
+    }
+
+    &__quote {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    &__container {
+      justify-content: center;
+
+      &-desc {
+        padding-top: 25px;
+        padding-bottom: 30px;
+      }
+
+      &-tablet {
+        padding-top: 7px;
+      }
+    }
+
+    &__logo {
+      margin-bottom: -4px;
+    }
+
+    &__left {
+      margin-right: 0;
+
+      &-desc {
+        display: none;
+      }
+
+      &-mobile {
+        align-items: center;
+      }
+    }
+
+    &__quote {
+      display: none;
+    }
+
+    &__mobile {
+      display: block;
+    }
+
+    &__logo {
+      width: 111px;
+    }
+
+    &__company {
+      font-size: 10px;
+    }
+  }
+}

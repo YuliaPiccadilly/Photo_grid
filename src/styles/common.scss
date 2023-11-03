@@ -1,0 +1,286 @@
+
+
+//fonts
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Bold"),
+    url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Regular"),
+    url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TTFirsNeue";
+  src: local("TTFirsNeue-Bold"),
+    url("../fonts/TTFirsNeue-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TTFirsNeue";
+  src: local("TTFirsNeue-Medium"),
+    url("../fonts/TTFirsNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TTFirsNeue";
+  src: local("TTFirsNeue-Regular"),
+    url("../fonts/TTFirsNeue-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+//var
+
+$dark: #202020;
+$white: #FFFFFF;
+$mainOrang: #FF6E30;
+$lghtGrey: #CACACA;
+
+//common styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  background: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+svg {
+  max-width: 100%;
+}
+
+.ul-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hide {
+  display: none !important;
+}
+
+// .container {
+//   max-width: 1920px;
+//   padding-left: calc((1920px - 1290px) / 2);
+//   padding-right: calc((1920px - 1290px) / 2);
+//   margin: 0 auto; /*центровка*/
+// }
+.container {
+  max-width: 1352px;
+  margin: 0 auto;
+  padding-right: 31px;
+  padding-left: 31px;
+}
+
+.btn {
+  text-align: center;
+  transition: outline .2s ease-in-out, background-color .2s ease-in-out;
+  outline-offset: -1px;
+  outline: $mainOrang solid 3px;
+  padding: 16px 22px 15px;
+  font-family: "Roboto", sans-serif;
+  color: $white;
+
+  &-orange {
+    align-self: flex-start;
+    background-color: $mainOrang;
+
+    &:hover {
+      background-color: #BC572B;
+      outline: 3px solid #BC572B;
+    }
+
+    &:focus {
+      background-color: $mainOrang;
+
+      &:focus,
+      &:active {
+        outline: 3px solid $mainOrang;
+      }
+
+      &:active {
+        background-color: #CE4307;
+      }
+    }
+  }
+}
+
+.hashtag {
+  position: absolute;
+  background-color: $dark;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 7px 14px;
+  text-align: center;
+}
+
+.title,
+.subscribe,
+.menu__link,
+.header__tel,
+.header__inp {
+  font-family: "TTFirsNeue", sans-serif
+}
+
+.title,
+.subscribe {
+  font-size: 24px;
+}
+
+.title,
+.btn {
+  font-weight: 700;
+}
+
+.title {
+  line-height: 31px;
+}
+
+.field {
+  padding: 15px 23px 16px;
+  transition: color 0.2s ease-in-out, outline 0.2s ease-in-out;
+
+  &::placeholder {
+    transition: color 0.2s ease-in-out;
+  }
+
+  &:hover,
+  &:hover::placeholder {
+    color: $mainOrang;
+  }
+
+  &:focus {
+    outline: 1px solid $mainOrang;
+  }
+}
+
+.date {
+  display: flex;
+  align-items: center;
+
+  &__calendar,
+  &__clocks {
+    fill: $white;
+  }
+
+  &__calendar {
+    margin-right: 5px;
+  }
+
+  &__day {
+    font-family: "roboto", sans-serif;
+    font-size: 12px;
+    line-height: 22px;
+    color: #999999;
+    ;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &__clocks {
+    margin-right: 4px;
+  }
+}
+
+.js-validate-error-label {
+  font-size: 10px;
+  line-height: 11px;
+  position: absolute;
+  top: 2px;
+  margin-left: 24px;
+}
+
+.ymaps-2-1-79-map-copyrights-promo {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding-right: 27px;
+    padding-left: 27px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    padding-right: 21px;
+    padding-left: 21px;
+  }
+}
+
+@import "normalize";
+@import "header";
+@import "works";
+@import "about";
+@import "projects";
+@import "contacts";
+@import "footer";

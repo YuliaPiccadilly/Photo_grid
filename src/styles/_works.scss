@@ -1,0 +1,188 @@
+
+
+.works {
+  padding-bottom: 64px;
+
+  &__container,
+  &__list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__event {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    padding-top: 406px;
+    margin-top: 6px;
+    padding-right: 145px;
+    padding-left: 58px;
+    padding-bottom: 60px;
+    background: url(../imgs/img/evetn_1920.jpg) center / cover no-repeat;
+  }
+  &__hashtag {
+      font-family: "roboto", sans-serif;
+    align-self: flex-start;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+  }
+  &__organizer {
+    font-family: "TTFirsNeue", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 3px;
+    color: #Ffffff;
+  }
+  &__title {
+    font-family: "TTFirsNeue", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 37px;
+    margin-bottom: 19px;
+    color: #fff;
+  }
+  &__item-one {
+    grid-column: span 2;
+  }
+  &__item-two, &__item-three {
+    margin-top: -6px;
+  }
+  &__heading {
+    font-family: "TTFirsNeue", sans-serif;
+    font-size: 24px;
+    line-height: 25px;
+    margin-bottom: 25px;
+  }
+  &__example {
+    img {
+      max-width: 100%;
+    }
+  }
+  &__btn {
+    &-more {
+    align-self: flex-start;
+    background-color: #ff6e30;
+    color: #fff;
+    &:hover {
+        background-color: #BC572B;
+        outline-color: #BC572B;
+    }
+    &:focus {
+        background-color: #FF6E30;
+        outline: 3px solid #CE4307;
+    }
+    &:active {
+        background-color: #CE4307;
+        outline: 3px solid #CE4307;
+    }
+    }
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .works {
+    &__event {
+      background: url(../imgs/img/event_1024.jpg) center / cover
+        no-repeat;
+      margin-top: 0;
+      padding-right: 30px;
+      padding-left: 30px;
+      padding-bottom: 30px;
+      padding-top: 428px;
+    }
+    &__organizer {
+      margin-bottom: 8px;
+    }
+    &__title {
+      font-size: 34px;
+      line-height: 34px;
+    }
+  }
+
+}
+
+@media (max-width: 768px) {
+  .works {
+    padding-top: 19px;
+    &__event {
+      background: url(../imgs/img/event_768.jpg) center / cover
+        no-repeat;
+      padding: 225px 46px 16px 29px;
+      margin-top: 2px;
+    }
+    &__organizer {
+      margin-bottom: 14px;
+    }
+    &__title {
+      margin-bottom: 23px;
+      line-height: 31px;
+    }
+    &__heading {
+      font-size: 22px;
+      line-height: 23px;
+      margin-bottom: 17px;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .works {
+    &__container {
+      grid-template-columns: 1fr;
+      row-gap: 33px;
+    }
+    &__example {
+      img {
+        max-width: none;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+
+  .hashtag {
+    font-size: 12px;
+    padding: 4px 7px;
+  }
+
+  .works {
+    padding-top: 0px;
+    padding-bottom: 47px;
+    &__btn-more {
+      font-size: 14px;
+      padding: 10px 22px;
+    }
+    &__hashtag {
+      top: 5px;
+      right: 6px;
+    }
+    &__event {
+      background: url("../imgs/img/event_320\ .jpg") center / cover
+        no-repeat;
+      padding-top: 236px;
+      padding-right: 30px;
+      padding-bottom: 32px;
+    }
+    &__organizer {
+      font-size: 14px;
+      line-height: 16px;
+      margin-bottom: 10px;
+    }
+    &__title {
+      font-size: 24px;
+      line-height: 26px;
+      margin-bottom: 14px;
+      padding-right: 49px;
+    }
+    &__heading {
+      font-size: 18px;
+      line-height: 19px;
+    }
+  }
+}

@@ -1,0 +1,439 @@
+
+
+@keyframes showSearch {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes showSearch-tablet {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.header {
+  padding-bottom: 34px;
+
+  &__social {
+    &-item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &-item {
+      outline: none;
+    }
+
+    &-item a:hover .icon {
+      fill: $mainOrang;
+    }
+
+    &-item a:focus .icon {
+      fill: #BC572B;
+    }
+
+    &-item a:active .icon {
+      fill: #CE4307;
+    }
+  }
+
+  &__nav-tablet {
+    display: none;
+    position: relative;
+
+    &-btn {
+      cursor: pointer;
+      display: none;
+    }
+  }
+
+  &__form {
+    // display: none;
+    position: relative;
+
+    &-mobile {
+      display: none;
+    }
+  }
+
+  &__inp-tablet::placeholder {
+    color: $white;
+  }
+
+  &__inp-tablet {
+    border-bottom: 1px solid $white;
+    color: $white;
+    min-width: 318px;
+  }
+
+  &__input {
+    display: none;
+    justify-content: space-between;
+    position: absolute;
+    top: 43px;
+    left: -315px;
+    background-color: $dark;
+    color: $white;
+    z-index: 2;
+    padding: 0 0 1px 0;
+
+    &-show {
+      display: flex;
+      animation: showSearch-tablet 0.5s ease-in;
+    }
+  }
+
+  &__menu-container,
+  &__tel {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__menu {
+    background-color: $dark;
+
+    &-container {
+      position: relative;
+      padding-top: 25px;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__menu-container {
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 190px;
+    height: 31px;
+    margin-right: calc(15px + 33 * ((100vw - 1024px)/ 896));
+  }
+
+}
+
+.menu__burger {
+  min-height: 541px;
+  position: absolute;
+  top: 81px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 14px 2px 20px 21px;
+  opacity: 0;
+  background-color: $dark;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  &-tel {
+    &-orange {
+      display: none;
+      color: $mainOrang;
+      font-family: "TTFirsNeue", sans-serif;
+    }
+
+    svg {
+      fill: $mainOrang;
+    }
+  }
+
+  &_active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__item:last-child {
+    margin-bottom: 200px;
+  }
+
+  &__link {
+    font-family: "TTFirsNeue", sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    color: $white;
+  }
+}
+
+.icon {
+  transition: all 0.4s ease-in-out;
+  fill: $lghtGrey;
+}
+
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+
+  // &__item:not(:last-child) {
+  //   margin-right: calc(46px + 33 * (100vw - 1024px) / 896);
+  // }
+  &__item:nth-child(-n+5) {
+    margin-right: calc(46px + 33 * (100vw - 1024px) / 896);
+  }
+
+  &__item-tel {
+    display: none;
+  }
+
+  &__link {
+    font-family: "TTFirsNeue", sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    color: $white;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    word-break: break-all;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      color: #FF6E30;
+    }
+
+    &:focus {
+      color: $white;
+      outline: none;
+    }
+
+    &:focus::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -4px;
+      right: -5px;
+      bottom: -3px;
+      background: #BC572B;
+      z-index: -1;
+      padding: 10px;
+    }
+
+    &:active {
+      background-color: transparent;
+      color: #CE4307;
+    }
+
+    &:active::before {
+      content: '';
+      position: absolute;
+      background: transparent;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    &__form {
+      &-tablet {
+        display: block;
+      }
+    }
+
+    &__search {
+      display: block;
+    }
+
+    &__menu {
+      &-container {
+        padding-top: 26px;
+        padding-bottom: 25px;
+      }
+    }
+
+    &__logo {
+      width: 166px;
+      height: 27px;
+    }
+  }
+
+  .menu {
+    &__item:not(:last-child) {
+      margin-right: 33px;
+    }
+  }
+
+}
+
+@media (max-width: 900px) {
+  .header {
+    &__nav {
+      // display: none;
+      position: absolute;
+      top: 93px;
+      left: 0;
+      right: 0;
+    }
+
+    &__nav-tablet {
+      display: block;
+      background-color: #4A4A4A;
+      padding: 12px 27px;
+      margin-top: -1px;
+      min-height: 45px;
+
+      &-btn {
+        // margin-bottom: 20px;
+      }
+    }
+  }
+
+  .menu {
+    justify-content: space-between;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    padding-bottom: 14px;
+    &__logo {
+      width: 166px;
+    }
+  }
+
+  .menu {
+    &__item:not(:last-child) {
+      margin-right: calc(46px + 33 * (100vw - 1024px)/ 896);
+    }
+  }
+}
+
+@media (max-width: 615px) {
+  .header {
+    padding-bottom: 27px;
+
+    &__nav {
+      position: unset;
+      top: -43px;
+      left: -353px;
+    }
+
+    &__form {
+      &-mobile {
+        display: block;
+      }
+
+      &-tablet {
+        display: none;
+      }
+    }
+
+    &__menu {
+      min-height: 70px;
+    }
+
+    &__menu-container {
+      padding-top: 21px;
+      padding-bottom: 14px;
+    }
+
+    &__search svg {
+      width: 20px;
+    }
+
+    &__logo {
+      width: 111px;
+    }
+
+    &__nav-tablet {
+      // min-height: 45px;
+      padding: 14px 6px 9px 21px;
+
+      &-btn {
+        display: block;
+        margin-right: auto;
+        // margin-bottom: 30px;
+      }
+    }
+
+    &__input {
+      position: sticky;
+    }
+
+    &__inp-tablet {
+      width: 77.5%;
+      opacity: 0;
+      transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+      &-active {
+        animation: showSearch 0.9s cubic-bezier(.47, -.44, .49, 1.46);
+        opacity: 1;
+      }
+
+      &-close {
+        transition: transform 0.3s ease-in-out;
+        transform: scale(0) translate(0, 0);
+      }
+    }
+  }
+
+  .menu__burger-tel-orange {
+    display: inline;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    min-height: 541px;
+    position: absolute;
+    top: 81px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100vw;
+    justify-content: flex-start;
+    padding: 14px 2px 36px 21px !important;
+    opacity: 0;
+    background-color: $dark;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    &__item {
+      &-tel {
+        display: block;
+        margin-top: auto;
+      }
+    }
+
+    &__item:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+
+    &-tel {
+      &-orange {
+        color: $mainOrang;
+        font-family: "TTFirsNeue", sans-serif;
+      }
+
+      svg {
+        fill: $mainOrang;
+      }
+    }
+
+    &-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+}
+
+@media (max-width: 400px) {
+  .header {
+    &__inp-tablet {
+      min-width: 237px;
+    }
+  }
+}
